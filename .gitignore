@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/BudgetVsActual/DesignTimeBuild/.dtbcache.v2
+/.vs/BudgetVsActual/FileContentIndex/4a4c6573-a7d3-46a1-a9b8-89b2a8311bd8.vsidx
+/.vs/BudgetVsActual/v17/.suo
+/.vs/BudgetVsActual/v17/DocumentLayout.json
