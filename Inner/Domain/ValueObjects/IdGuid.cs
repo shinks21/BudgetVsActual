@@ -1,7 +1,12 @@
-﻿namespace Domain.ValueObjects
+﻿using CSharpFunctionalExtensions;
+
+namespace Domain.ValueObjects
 {
-    public record struct IdGuid(Guid Value)
+    public record IdGuid(Guid Value)
     {
-        IdGuid New() => new IdGuid(Guid.CreateVersion7());
+        public static Result<IdGuid> Create()
+        {
+            return new IdGuid(Guid.CreateVersion7());
+        }
     }
 }
