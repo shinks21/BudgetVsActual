@@ -1,5 +1,4 @@
-﻿using BudgetVsActual.Data;
-using Domain.Entities;
+﻿using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -15,10 +14,6 @@ namespace EFCoreSQLServer
 
             services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-
-
-            //services.AddScoped<IUnitOfWork, UnitOfWork>();
-            //services.AddScoped<INotesRepository, NotesRepository>();
 
             return services;
         }
