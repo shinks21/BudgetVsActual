@@ -15,23 +15,31 @@ namespace EFCoreSQLServer.Configuration
             builder
                 .Property(e => e.Id)
                 .HasConversion(id => id.Value, value
-                    => new IdGuid(value));
+            => new IdGuid(value));
 
-            builder
-                .Property(e => e.DateCreated)
-                .HasConversion(e => e.Value, val => DateCreated.Create().Value);
+            builder.Property(e => e.DateCreated)
+                .HasConversion<DateTime>();
 
-            builder
-                .Property(e => e.Amount)
-                .HasConversion(e => e.Value, val => new Currency(val));
 
-            builder
-                .Property(e => e.Date)
-                .HasConversion(e => e.Value, val => new ItemDate(val));
+            //builder
+            //.Property(e => e.DateCreated)
+            //    .HasConversion(e => e.Value, val => new DateCreated());
 
-            builder.HasOne(e => e.CreatedBy)
-                .WithMany(e => e.BudgetItems)
-                .HasForeignKey(e => e.CreatedBy);
+
+            //builder
+            //    .Property(e => e.DateCreated)
+            //    .HasConversion(e => e.Value, val => DateCreated.Create().Value);
+
+            //builder
+            //    .Property(e => e.Amount)
+            //    .HasConversion(e => e.Value, val => new Currency(val));
+
+            //builder
+            //    .Property(e => e.Date)
+            //    .HasConversion(e => e.Value, val => new ItemDate(val));
+
+            //builder.HasOne(e => e.CreatedBy)
+            //    .WithMany(e => e.BudgetItems);
         }
     }
 }
