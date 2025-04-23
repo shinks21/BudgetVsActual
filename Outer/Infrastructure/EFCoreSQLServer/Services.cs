@@ -1,4 +1,5 @@
-﻿using Domain.Entities;
+﻿using Application.Abstractions;
+using Domain.DatabaseEntities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -17,6 +18,8 @@ namespace EFCoreSQLServer
 
             services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddScoped<IApplicationDbContext>(sp => sp.GetRequiredService<ApplicationDbContext>());
 
             return services;
         }

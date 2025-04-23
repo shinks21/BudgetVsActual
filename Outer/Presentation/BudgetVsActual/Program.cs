@@ -1,3 +1,5 @@
+using BudgetVsActual;
+using BudgetVsActual.API.Categories;
 using EFCoreSQLServer;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,11 +9,14 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 
 
 builder.Services
-    .AddDataAccessServices(connectionString);
+    .AddDataAccessServices(connectionString)
+    .AddPresentation();
 
 builder.Services.AddRazorPages();
 
 var app = builder.Build();
+
+app.MapCategoryEndpoints();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

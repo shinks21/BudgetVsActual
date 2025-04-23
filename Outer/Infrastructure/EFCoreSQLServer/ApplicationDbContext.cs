@@ -1,4 +1,5 @@
-﻿using Domain.Entities;
+﻿using Application.Abstractions;
+using Domain.DatabaseEntities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -13,8 +14,7 @@ namespace EFCoreSQLServer
             IdentityUserRole<Guid>,
             IdentityUserLogin<Guid>,
             IdentityRoleClaim<Guid>,
-            IdentityUserToken<Guid>>(
-                options)
+            IdentityUserToken<Guid>>(options), IApplicationDbContext
     {
         public DbSet<BudgetItem> BudgetItems { get; set; }
         public DbSet<Category> Categories { get; set; }
