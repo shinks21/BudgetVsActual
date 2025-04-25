@@ -5,9 +5,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace EFCoreSQLServer
 {
-    public static class Services
+    public static class DependencyInjection
     {
-        public static IServiceCollection AddDataAccessServices(this IServiceCollection services, string connectionString)
+        public static IServiceCollection AddInfrastructureDataAccessServices(this IServiceCollection services, string connectionString)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(

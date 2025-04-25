@@ -30,7 +30,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Inner\Domain\Domain.csproj" />
     <ProjectReference Include="..\..\Infrastructure\EFCoreSQLServer\EFCoreSQLServer.csproj" />
   </ItemGroup>
 
