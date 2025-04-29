@@ -15,7 +15,26 @@ namespace Application.Categories.Create
         {
             get => _categoryName;
 
-            set => _categoryName = value[..50];
+            set
+            {
+                switch (value)
+                {
+                    case null:
+                        _categoryName = string.Empty;
+                        break;
+                    default:
+                        if (value.Length > 50)
+                        {
+                            _categoryName = value.Substring(0, 50);
+                        }
+                        else
+                        {
+                            _categoryName = value;
+                        }
+
+                        break;
+                }
+            }
         }
     }
 }

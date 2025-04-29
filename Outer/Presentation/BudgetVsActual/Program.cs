@@ -13,9 +13,11 @@ builder.Services
     .AddApplication()
     .AddPresentation();
 
-builder.Services.AddRazorPages();
-
 var app = builder.Build();
+
+app.UseStatusCodePages(async statusCodeContext
+    => await Results.Problem(statusCode: statusCodeContext.HttpContext.Response.StatusCode)
+                 .ExecuteAsync(statusCodeContext.HttpContext));
 
 EndPoints.Map(app);
 

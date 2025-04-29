@@ -12,6 +12,7 @@ namespace Application.Categories.Create
         {
             var category = new Category
             {
+                Id = new IdGuid(Guid.CreateVersion7(TimeProvider.System.GetUtcNow())),
                 Active = true,
                 CategoryName = request.CategoryName,
                 DateCreated = DateTime.UtcNow,
