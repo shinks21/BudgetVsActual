@@ -1,16 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace BudgetVsActual.Pages
 {
-    public class PrivacyModel : PageModel
+    [AllowAnonymous]
+    public class PrivacyModel(ILogger<PrivacyModel> logger) : PageModel
     {
-        private readonly ILogger<PrivacyModel> _logger;
-
-        public PrivacyModel(ILogger<PrivacyModel> logger)
-        {
-            _logger = logger;
-        }
+        private readonly ILogger<PrivacyModel> _logger = logger;
 
         public void OnGet()
         {

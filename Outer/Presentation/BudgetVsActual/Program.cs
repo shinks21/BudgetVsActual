@@ -1,17 +1,25 @@
-using EFCoreSQLServer;
+using BudgetVsActual.API;
+using static Application.DependencyInjection;
+using static BudgetVsActual.DependencyInjection;
+using static EFCoreSQLServer.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
-
 builder.Services
-    .AddDataAccessServices(connectionString);
-
-builder.Services.AddRazorPages();
+    .AddInfrastructureDataAccessServices(connectionString)
+    .AddApplication()
+    .AddPresentation();
 
 var app = builder.Build();
+
+app.UseStatusCodePages(async statusCodeContext
+    => await Results.Problem(statusCode: statusCodeContext.HttpContext.Response.StatusCode)
+                 .ExecuteAsync(statusCodeContext.HttpContext));
+
+EndPoints.Map(app);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
