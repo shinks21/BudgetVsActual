@@ -10,7 +10,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 
 builder.Services
     .AddInfrastructure_DataAccessServices(connectionString)
-    .AddInfrastructure_JWTTokens(connectionString)
+    .AddInfrastructure_JWTTokens(builder.Configuration)
     .AddApplication()
     .AddPresentation(builder.Configuration);
 
