@@ -30,6 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\JWTTokens\JWTTokens.csproj" />
     <ProjectReference Include="..\..\Infrastructure\EFCoreSQLServer\EFCoreSQLServer.csproj" />
   </ItemGroup>
 

@@ -9,15 +9,16 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
 builder.Services
-    .AddInfrastructureDataAccessServices(connectionString)
+    .AddInfrastructure_DataAccessServices(connectionString)
+    .AddInfrastructure_JWTTokens(connectionString)
     .AddApplication()
-    .AddPresentation();
+    .AddPresentation(builder.Configuration);
 
 var app = builder.Build();
 
-app.UseStatusCodePages(async statusCodeContext
-    => await Results.Problem(statusCode: statusCodeContext.HttpContext.Response.StatusCode)
-                 .ExecuteAsync(statusCodeContext.HttpContext));
+//app.UseStatusCodePages(async statusCodeContext
+//    => await Results.Problem(statusCode: statusCodeContext.HttpContext.Response.StatusCode)
+//                 .ExecuteAsync(statusCodeContext.HttpContext));
 
 EndPoints.Map(app);
 

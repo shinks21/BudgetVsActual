@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgetVsActual", "Outer\Pre
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreSQLServer", "Outer\Infrastructure\EFCoreSQLServer\EFCoreSQLServer.csproj", "{8F14D37B-AC0C-1600-6F3A-3C1E265F5D76}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JWTTokens", "JWTTokens\JWTTokens.csproj", "{79A6CFDD-45BF-4361-AED2-5CBFD9BA621F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,10 @@ Global
 		{8F14D37B-AC0C-1600-6F3A-3C1E265F5D76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F14D37B-AC0C-1600-6F3A-3C1E265F5D76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F14D37B-AC0C-1600-6F3A-3C1E265F5D76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79A6CFDD-45BF-4361-AED2-5CBFD9BA621F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79A6CFDD-45BF-4361-AED2-5CBFD9BA621F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79A6CFDD-45BF-4361-AED2-5CBFD9BA621F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79A6CFDD-45BF-4361-AED2-5CBFD9BA621F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +57,7 @@ Global
 		{87A7908D-39DC-41B6-9068-ECD6E019E7B6} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{270DD39D-7969-E5C8-0919-DC0C4A45AFC3} = {87A7908D-39DC-41B6-9068-ECD6E019E7B6}
 		{8F14D37B-AC0C-1600-6F3A-3C1E265F5D76} = {11A447E6-6396-4010-876D-8A9B2D80912F}
+		{79A6CFDD-45BF-4361-AED2-5CBFD9BA621F} = {11A447E6-6396-4010-876D-8A9B2D80912F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4EA5F2B8-9675-4DAE-A785-E17058F9CF78}

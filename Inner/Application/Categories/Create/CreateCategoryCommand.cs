@@ -25,7 +25,7 @@ namespace Application.Categories.Create
                     default:
                         if (value.Length > 50)
                         {
-                            _categoryName = value.Substring(0, 50);
+                            _categoryName = value[..50];
                         }
                         else
                         {

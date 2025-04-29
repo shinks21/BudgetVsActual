@@ -7,7 +7,7 @@ namespace EFCoreSQLServer
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddInfrastructureDataAccessServices(this IServiceCollection services, string connectionString)
+        public static IServiceCollection AddInfrastructure_DataAccessServices(this IServiceCollection services, string connectionString)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(

@@ -1,6 +1,4 @@
-﻿
-//using Application.Categories.Create;
-using Application.Categories.Create;
+﻿using Application.Categories.Create;
 using CSharpFunctionalExtensions;
 using Domain.ValueObjects;
 using MediatR;

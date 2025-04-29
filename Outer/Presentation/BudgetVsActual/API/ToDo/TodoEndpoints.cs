@@ -10,11 +10,11 @@
                 await context.Response.WriteAsJsonAsync(new { Message = "All todo items" });
             });
 
-            app.MapGet("/todo/{id}", async context =>
-            {
-                // Get one todo item
-                await context.Response.WriteAsJsonAsync(new { Message = $"One todo item." });
-            });
+            //app.MapGet("/todo/{id}", async context =>
+            //{
+            //    // Get one todo item
+            //    await context.Response.WriteAsJsonAsync(new { Message = $"One todo item." });
+            //});
         }
     }
 }
